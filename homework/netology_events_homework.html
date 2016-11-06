@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Netology - Functions in JavaScript</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<script src="bootstrap/jquery-1.11.3.js"></script>
+	<script src="bootstrap/jquery.ba-throttle-debounce.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<style type="text/css">
+   		.background {
+			background-color: gray;
+		}
+	</style>
+</head>
+<body>
+	<section class="jumbotron">
+	    <div class="container">
+		    <div class="row">
+		    	<h2>Netology</h2>
+		        <h3>Java script events. Homework</h3>
+		        <h4>%ИМЯ_СТУДЕНТА%</h4>
+		    </div>
+	    </div>
+	</section>
+
+	<section class="container">
+	  <div class="row">
+	  	<div id="buttonList" class="col-sm-12">
+	  		<button id="jsButton1" class="btn btn-success">Кнопка 1</button>
+	  		<button id="jsButton2" class="btn btn-success">Кнопка 2</button>
+	  		<button id="jsButton3" class="btn btn-success">Кнопка 3</button>
+	  		<button id="jsButton4" class="btn btn-success">Кнопка 4</button>
+	  		<button id="jsButton5" class="btn btn-success">Кнопка 5</button>
+	  	</div>
+	  </div>
+	  <hr>
+	</section>
+
+	<section class="container">
+	  <div class="row">
+	  	<div id="buttonList" class="col-sm-12">
+	  		<table class="table table-bordered">
+	  			<tr>
+	  				<td> <a href="https://google.com">Перейти на google</td>
+	  				<td> <a href="https://yandex.com">Перейти на yandex</td>
+	  				<td> <a href="https://bing.com">Перейти на bing</td>
+	  			</tr>
+	  			<tr>
+	  				<td> <a href="https://amazon.com">Перейти на amazon</td>
+	  				<td> <a href="https://ebay.com">Перейти на ebay</td>
+	  				<td> <a href="https://facebook.com">Перейти на facebook</td>
+	  			</tr>
+	  		</table>
+	  	</div>
+	  </div>
+	  <hr>
+	</section>
+
+	<script type="text/javascript">
+
+	var lnk = document.querySelector('#buttonList');
+
+	lnk.onclick = function(e) {
+		var text = e.target.textContent;
+		switch(text) {
+			case 'Кнопка 1':
+				alert('Была нажата кнопка No1');
+				break;
+
+			case 'Кнопка 2':
+				alert('Была нажата кнопка No2');
+				break;
+
+			case 'Кнопка 3':
+				alert('Была нажата кнопка No3');
+				break;
+
+			case 'Кнопка 4':
+				alert('Была нажата кнопка No4');
+				break;
+
+			case 'Кнопка 5':
+				alert('Была нажата кнопка No5');
+				break;
+		}
+	}
+
+	var table = document.querySelector('.table');
+
+	table.onclick = function(e) {
+		e.preventDefault();
+		if(e.target.nodeName == 'A') {
+			e.target.parentNode.classList.add('background');
+		}
+	}
+
+	</script>
+</body>
+
+
+</html>
