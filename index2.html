@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Задание 2 | Домашнее задание к лекции 4.5 «Технология AJAX»</title>
+</head>
+<body>
+    <form data-role="xml-request-form">
+        <label class="labelemail">
+            Email:
+            <input type="email" class="email" name="email" value="" data-role="xml-request-form-login" />
+        </label>
+        <label class="labelpassword">
+            Password:
+            <input type="password" class="password" name="password" value="" data-role="xml-request-form-password" />
+        </label>
+        <button type="button" class="signIn" data-role="xml-request-form-submit">Sign in</button>
+        <span data-role="xml-request-preloader" class="preloader" style="display: none">
+            LOADING!
+        </span>
+        <div data-role="xml-request-error" class="error" style="display: none">
+            Error!
+        </div>
+    </form>
+
+    <div data-role="json-request-user-profile" class="user">
+        <!-- user profile should be displayed here after successfull login -->
+
+        <img class="img" src="" alt="" data-role="json-request-user-profile-avatar" style="margin-top: 10px"/>
+        <span class="fullname" data-role="json-request-user-profile-fullname">
+            <!-- full name here (name lastname) -->
+        </span>
+        <span class="country" data-role="json-request-user-profile-country">
+            <!-- country here -->
+        </span>
+        <span class="hobbies" data-role="json-request-user-profile-hobbies">
+            <!-- hobbies here, comma separated -->
+        </span>
+
+        <button data-role="json-request-user-profile-logout" class="signOut" style="display: none">Sign out</button>
+    </div>
+
+    <style>
+        .fullname {
+            display: block;
+        }
+
+        .country {
+            display: block;
+        }
+
+        .hobbies {
+            display: block;
+        }
+    </style>
+
+    <script src="script2.js"></script>
+</body>
+</html>
