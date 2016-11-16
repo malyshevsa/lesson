@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="button"></div>
+<div class="block"></div>
+
+<div class="bg"></div>
+<div class="auto"></div>
+
+<style>
+    .button {
+        width: 200px;
+        height: 50px;
+        background-color: yellow;
+        transition-property: background-color;
+        transition-duration: 2s;
+    }
+
+    .button:hover {
+        background-color: green;
+    }
+
+    .block {
+        width: 60px;
+        height: 75px;
+        background-color: #2b542c;
+        margin-top: 50px;
+        transition-property: width;
+        transition-duration: 5s;
+    }
+
+    .block:hover{
+        width: 300px;
+    }
+
+    .bg {
+        width: auto;
+        height: 500px;
+        background: url("bg.jpg") no-repeat;
+        background-size: cover;
+        margin-top: 50px;
+    }
+    
+    .auto {
+        background: url("auto.png") no-repeat;
+        z-index: 100;
+        width: 220px;
+        height: 130px;
+        background-size: cover;
+        position: absolute;
+        animation: drive 15s linear 1 alternate 2s forwards;
+    }
+
+    .auto:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes drive {
+        0% {left: 0; top: 600px;}
+        50% {left: 89%; top: 600px;}
+        100% {left: 50%; top: 600px;}
+    }
+</style>
+
+<script>
+    var button = document.querySelector('.button');
+    button.addEventListener('click', function() {
+        button.style.backgroundColor = '#964b00';
+    });
+
+    button.onmouseout = function() {
+        button.style.backgroundColor = 'yellow';
+    };
+</script>
+</body>
+</html>
