@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gradient</title>
+</head>
+<body>
+<div class="gradient1"></div>
+<div class="gradient2"></div>
+
+<style>
+    .gradient1 {
+        width: 271px;
+        height: 160px;
+        position: absolute;
+        left: 45px;
+        top: 34px;
+        background: linear-gradient(to right bottom, orange 15%, yellow 51%, yellow 58%, orange 85%);
+        perspective: 500px;
+        transform-style: preserve-3d;
+    }
+
+    .gradient2 {
+        position: absolute;
+        left: 47px;
+        top: 269px;
+        width: 267px;
+        height: 182px;
+        background: radial-gradient(circle at center, #2d0c57, #ff7c00 52%);
+    }
+
+    .gradient1:hover {
+        transform: scale(2) rotate3d(0, 200, 0, 180deg);
+        animation: rotate 5s;
+    }
+
+    .gradient2:hover {
+        transform: scale(2) rotate3d(0, 200, 0, 180deg);
+        animation: rotate 5s;
+    }
+
+    @keyframes rotate {
+        50% {
+            transform: none;
+            background: black;
+        }
+    }
+</style>
+</body>
+</html>
