@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Конвертор валют</title>
+<head/>
 <body>
+<form>
+    <label>Выберите исходную валюту:</label>
+    <select id="currency">
+    </select>
+    <br/>
+    <br/>
+    <label>Введите сумму: </label>
+    <input id="cash">
+    <br/>
+    <br/>
+    <label>Выберите расчетную валюту: </label>
+    <select id="estimated">
+    </select>
+    <br/>
+    <br/>
+    <input type=button value="Вычислить" id="calculate">
+    <br/>
+    <br/>
+    <label><span id="result"></span></label>
+</form>
+<script>
+    $(function(){
 
+        $.getJSON('http://university.netology.ru/api/currency', function(data) {
+            console.log(data);
+
+            var selectSource = $('#currency');
+            var selectEstimated = $('#estimated');
+            $.each(data, function(key, value) {
+                selectSource.append('<option value="' + value.NumCode + '" selected="selected">' + value.Name + '</option>');
+                selectEstimated.append('<option value="' + value.NumCode + '" selected="selected">' + value.Name + '</option>');
+            })
+        });
+
+        $('#calculate').on('click', function() {
+            var sum = $('#cash').val();
+            var selectSource = $('#currency').val();
+            var selectEstimated = $('#estimated').val();
+
+            console.log(sum, selectSource, selectEstimated);
+            $.getJSON('http://university.netology.ru/api/currency', function(data) {
+                    $('#result').text((1/selectEstimated)/(1/selectSource) * sum);
+                });
+            });
+        });
+</script>
 </body>
 </html>
