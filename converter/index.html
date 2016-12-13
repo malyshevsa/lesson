@@ -24,9 +24,10 @@
 <script>
     $(function(){
         $.getJSON('http://university.netology.ru/api/currency', function(data) {
-            console.log(data);
+
             var selectSource = $('#currency');
             var selectEstimated = $('#estimated');
+
             $.each(data, function(key, value) {
                 if (value.NumCode == '978') {
                     selectSource.append('<option value="' + value.Value + '" selected>' + value.Name + '</option>');
@@ -36,8 +37,10 @@
                     selectSource.append('<option value="' + value.Value + '">' + value.Name + '</option>');
                     selectEstimated.append('<option value="' + value.Value + '">' + value.Name + '</option>');
                 }
-            })
+            });
+
             calculate();
+
         });
 
         $('#cash, #currency, #estimated').on('keyup mouseup', function() {
@@ -50,7 +53,7 @@
             var selectEstimated = $('#estimated').val();
             $('#result').text((1 / selectEstimated) / (1 / selectSource) * sum);
         }
-        });
+    });
 </script>
 </body>
 </html>
