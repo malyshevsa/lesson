@@ -11,7 +11,7 @@
     <br/>
     <br/>
     <label>Введите сумму: </label>
-    <input id="cash" value="1">
+    <input id="cash" value="1" type="number">
     <br/>
     <br/>
     <label>Выберите расчетную валюту: </label>
@@ -51,7 +51,7 @@
             var sum = $('#cash').val();
             var selectSource = $('#currency').val();
             var selectEstimated = $('#estimated').val();
-            $('#result').text((1 / selectEstimated) / (1 / selectSource) * sum);
+            $('#result').text(((1 / selectEstimated) / (1 / selectSource) * sum).toFixed(1));
         }
     });
 </script>
