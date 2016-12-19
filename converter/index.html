@@ -51,7 +51,7 @@
             var sum = $('#cash').val();
             var selectSource = $('#currency').val();
             var selectEstimated = $('#estimated').val();
-            $('#result').text(((1 / selectEstimated) / (1 / selectSource) * sum).toFixed(1));
+            $('#result').text(((1 / selectEstimated) / (1 / selectSource) * sum).toFixed(2));
         }
     });
 </script>
